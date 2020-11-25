@@ -1,12 +1,11 @@
 import pygame
 import sys
-import os
 import random
 
-
-# Initialising game environment, screen size, clock tick rate and game variables
+# Initialising game environment
 pygame.init()
 
+# Establish screen size, clock tick rate and game variables
 screen_width = 576
 screen_height = 1024
 floor_height = 900
@@ -17,11 +16,9 @@ pipe_refresh_rate = 1200
 move_speed = 10
 gravity = 0.25
 bird_move = 0
-
 screen = pygame.display.set_mode((screen_width,screen_height))
 clock = pygame.time.Clock()
 game_active = True
-
 
 # Loading background assets
 bg_path = 'assets/background-day.png'
@@ -89,7 +86,6 @@ def check_collisions(pipes):
         return False
     return True
 
-    
 # Main game loop
 while True:
     for event in pygame.event.get():
@@ -133,7 +129,7 @@ while True:
     if floor_x_pos <= -screen_width:
         floor_x_pos = 0
 
-    
+
     pygame.display.update()
     clock.tick(120)
 
